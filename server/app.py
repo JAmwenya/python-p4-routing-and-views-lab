@@ -15,20 +15,20 @@ def print_string(parameter):
 
 @app.route('/count/<int:parameter>')
 def count(parameter):
-    return '<br>'.join([str(i) for i in range(parameter)])
+    return '\n'.join([str(i) for i in range(parameter)]) + '\n'
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
 def math(num1, operation, num2):
     if operation == '+':
-        return f"{num1} + {num2} = {num1 + num2}"
+        return f"{num1 + num2}"
     elif operation == '-':
-        return f"{num1} - {num2} = {num1 - num2}"
+        return f"{num1 - num2}"
     elif operation == '*':
-        return f"{num1} * {num2} = {num1 * num2}"
+        return f"{num1 * num2}"
     elif operation == 'div':
-        return f"{num1} / {num2} = {num1 / num2}"
+        return f"{num1 / num2}"
     elif operation == '%':
-        return f"{num1} % {num2} = {num1 % num2}"
+        return f"{num1 % num2}"
     else:
         return "Invalid operation"
     
